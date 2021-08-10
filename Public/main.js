@@ -4,9 +4,9 @@ class App {
     }
     render () {
       let games = [
-        { id: 1, title: 'Legend of Zelda', calories: 150 },
-        { id: 2, title: 'Turkey Sandwich', calories: 600 },
-        { id: 3, title: 'Roasted Chicken', calories: 725 }
+        { id: 1, title: 'Legend of Zelda Breath of the Wild', },
+        { id: 2, title: 'Spiderman Miles Morales'},
+        { id: 3, title: 'Elder Scrolls Skyrim'}
       ]
       let el = document.getElementById('app')
       let fragment = document.createDocumentFragment()
