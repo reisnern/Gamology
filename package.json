@@ -1,10 +1,11 @@
 {
   "name": "controllers",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Description",
   "main": "connection.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,16 @@
   "dependencies": {
     "bulma": "^0.9.3",
     "express": "^4.17.1",
+
     "mongoose": "^5.13.6"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reisnern/Gamology.git"
+  },
+  "bugs": {
+    "url": "https://github.com/reisnern/Gamology/issues"
+  },
+  "homepage": "https://github.com/reisnern/Gamology#readme"
 }
