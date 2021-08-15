@@ -1,0 +1,36 @@
+{
+  "name": "Gamology",
+  "description": "An app that finds your next great gaming adventure",
+  "repository": "https://github.com/reisnern/Gamology",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=8"
+  },
+  
+    "scripts": {
+      "start-dev":"nodemon server.js"
+    },
+  
+  "dependencies": {
+    "@google-cloud/local-auth": "^1.0.0",
+    "bulma": "^0.9.3",
+    "express": "^4.17.1",
+    "googleapis": "^84.0.0",
+    "mongoose": "^5.13.6",
+    "nconf": "^0.11.0",
+    "nodemon": "^2.0.12",
+    "open": "^8.0.0",
+    "server-destroy": "^1.0.1",
+    "uuid": "^8.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0",
+    "execa": "^5.0.0",
+    "mocha": "^8.0.0",
+    "nock": "^13.0.0",
+    "proxyquire": "^2.1.3",
+    "typescript": "~4.2.3"
+  }
+}
