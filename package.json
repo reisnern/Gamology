@@ -6,19 +6,30 @@
   "engines": {
     "node": ">=8"
   },
+<<<<<<< HEAD
+=======
+  
+    "scripts": {
+      "start-dev":"nodemon server.js"
+    },
+  
+>>>>>>> 8fa63c313950c274ea2b16a68ada0f4b9f80ca6b
   "dependencies": {
     "@google-cloud/local-auth": "^1.0.0",
-    "googleapis": "^84.0.0",
-    "nconf": "^0.11.0",
-    "open": "^8.0.0",
-    "server-destroy": "^1.0.1",
-    "uuid": "^8.0.0",
     "bulma": "^0.9.3",
     "express": "^4.17.1",
-    "mongoose": "^5.13.6"
+    "googleapis": "^84.0.0",
+    "mongoose": "^5.13.6",
+    "nconf": "^0.11.0",
+    "nodemon": "^2.0.12",
+    "open": "^8.0.0",
+    "server-destroy": "^1.0.1",
+    "uuid": "^8.0.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0",
     "execa": "^5.0.0",
     "mocha": "^8.0.0",
     "nock": "^13.0.0",
