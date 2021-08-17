@@ -10,19 +10,42 @@ const {
     deleteUser
 } = require('../../controllers/user-controller');
 
-router.post('/register', (req, res)=>{
-    res.send('Hello World')
-    const newUser = new MyUser({name: req.body.Username, password: req.body.Password})
-    newUser.save().then(() => console.log('User Saved'));
+router.post('/register', (req, res) => {
+    if (req.body.Password !== req.body.Password2) {
+        res.send("Passwords do not match")
+    } else {
+        MyUser.findOne({ name: req.body.Username })
+            .then((data) => {
+                if (data) {
+                    res.send("Username already exists")
+                }
+                else {
+                    const newUser = new MyUser({ name: req.body.Username, password: req.body.Password })
+                    newUser.save().then(() => res.send('User Saved'));
+                }
+            })
+    }
+
+
+
 
 })
 
-router.post('/login', (req, res)=>{
+router.post('/login', (req, res) => {
     const Username = req.body.Username
-    MyUser.findOne({name: Username})
-    .then((data) => {console.log(data)
-    res.send(data) 
-    })
+    MyUser.findOne({ name: Username })
+        .then((data) => {
+            if (data){
+                if (req.body.Password === data.password){
+                    res.send("Login Successful")
+                } else{
+                    res.send("Incorrect Password")
+                }
+            } else{
+                res.send("User does not exist")
+            }
+            res.send(data)
+        })
 
 })
 
