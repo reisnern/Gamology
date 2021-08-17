@@ -6,11 +6,10 @@
   "engines": {
     "node": ">=8"
   },
-  
-    "scripts": {
-      "start-dev":"nodemon server.js"
-    },
-  
+  "scripts": {
+    "start-dev": "nodemon server.js",
+  },
+
   "dependencies": {
     "@google-cloud/local-auth": "^1.0.0",
     "bulma": "^0.9.3",
