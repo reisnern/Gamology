@@ -11,7 +11,6 @@ const {
 } = require('../../controllers/user-controller');
 
 router.post('/register', (req, res)=>{
-    res.send('Hello World')
     const newUser = new MyUser({name: req.body.Username, password: req.body.Password})
     newUser.save().then(() => console.log('User Saved'));
 
