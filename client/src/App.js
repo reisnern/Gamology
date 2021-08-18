@@ -1,9 +1,13 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { ApolloProvider } from '@apollo/react-hooks';
+import { Provider } from 'react-redux';
 import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import './App.css';
 import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import store from './utils/store';
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -17,15 +21,13 @@ const client = new ApolloClient({
   uri: '/graphql',
 })
 
-
-
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
         <div>
           <Provider store={store}>
-          <Nav />
+          <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
           </Switch>
@@ -33,10 +35,7 @@ function App() {
         </div>
       </Router>
     </ApolloProvider>
-
   );
 }
 
-
-//redux change
 export default App;
