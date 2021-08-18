@@ -1,0 +1,37 @@
+header {
+    overflow: hidden;
+    background-color: var(--secondary-color);
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--tertiary-color);
+}
+
+.logo {
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    margin-top: -6px;
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    float: right;
+}
+  
+li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--tertiary-color);
+}
+  
+li a:hover {
+    background-color: var(--hover);
+}
