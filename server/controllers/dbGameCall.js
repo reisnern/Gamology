@@ -6,6 +6,9 @@ var igdb = "https://api.igdb.com/v4/games";
 async function dbGameCall(url = igdb) {
     const response = await fetch(url, {
         method: 'GET',
+        headers: {
+
+        }
     })
         .then(gameData => gameData.json())
         .then(gameData => {
