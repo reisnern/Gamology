@@ -10,7 +10,6 @@
     "start-dev": "nodemon server/server.js",
     "start": "node server/server.js"
   },
-
   "dependencies": {
     "@google-cloud/local-auth": "^1.0.0",
     "bulma": "^0.9.3",
