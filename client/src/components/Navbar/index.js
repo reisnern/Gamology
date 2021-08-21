@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import './Navbar.css';
 import Auth from "../../utils/auth";
-import logo from "../../assets/logo.jpg";
+import logo from "../../assets/logo.png";
 
 function Navbar () {
     function showNavigation() {
@@ -11,13 +11,10 @@ function Navbar () {
         return (
           <ul>
             <li>
-              <a href="/" onClick={() => Auth.logout()}>Logout</a>
-            </li>
-            <li>
               <Link to="/account">Account</Link>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <a href="/" onClick={() => Auth.logout()}>Logout</a>
             </li>
           </ul>
         );
@@ -25,13 +22,10 @@ function Navbar () {
         return (
           <ul>
             <li>
-              <Link to="/signup">Sign Up</Link>
-            </li>
-            <li>
               <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/signup">Sign Up</Link>
             </li>
           </ul>
         );
@@ -39,7 +33,10 @@ function Navbar () {
     }
     return (
       <header className="navbar">
-        <img className="logo" src={logo} alt="Gamology" />
+        <div className="home">
+          <img className="logo" src={logo} alt="Gamology" />
+          <Link to="/">Gamology</Link>
+        </div>
         <nav>
           {showNavigation()}
         </nav>
