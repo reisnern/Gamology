@@ -1,8 +1,10 @@
 :root {
-    --primary-color: #120C3E;
-    --secondary-color: #3222AF;
-    --tertiary-color: #ffffff;
-    --hover: #24197D;
+    --primary-color: #0b0c10;
+    --secondary-color: #202833;
+    --tertiary-color: #C5C6C8;
+    --accent-color: #66FCF1;
+    --accent-shadow: #46A29F;
+    --font-color: #FFFFFF;
 }
 
 body {
