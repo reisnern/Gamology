@@ -1,37 +1,85 @@
-header {
-    overflow: hidden;
-    background-color: var(--secondary-color);
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    color: var(--tertiary-color);
+.navbar {
+    background-color: var(--primary-color);
+    color: var(--font-color);
 }
 
 .logo {
-    width: 300px;
-    height: auto;
-    overflow: hidden;
-    margin-top: -6px;
-    float: left;
+    max-height: 75px;
+    max-width: auto;
+    margin: 10px 0 10px 10px;
+}
+
+.home {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    font-size: 30px;
+}
+
+.home a {
+    color: var(--accent-color);
+    text-decoration: none;
+    display: block;
+    padding: 1em;
 }
 
 ul {
-    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0; 
 }
 
-li {
-    float: right;
-}
-  
 li a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
+    color: var(--accent-color);
     text-decoration: none;
-    color: var(--tertiary-color);
+    display: block;
+    margin: 10px;
+    padding: 10px 20px;
+    border: 1px solid var(--accent-color);
 }
-  
+
 li a:hover {
-    background-color: var(--hover);
+    background-color: var(--accent-shadow);
+    color: var(--primary-color);
+}
+
+@media all and (max-width: 800px) {
+    ul {
+        justify-content: space-around;
+    }
+    .home {
+        justify-content: space-around;
+    }
+  }
+  
+ @media all and (max-width: 600px) {
+    ul {
+      flex-flow: column wrap;
+      padding: 0;
+    }
+    .home {
+        flex-flow: column wrap;
+        padding: 0;
+    }
+    ul a { 
+      text-align: center; 
+      padding: 10px;
+    }
+    .home a { 
+        text-align: center; 
+        padding: 10px;
+    }
+    ul li:last-of-type a {
+      border-bottom: none;
+    }
+    .home li:last-of-type a {
+        border-bottom: none;
+    }
 }

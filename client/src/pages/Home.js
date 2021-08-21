@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import Genre from "../components/Genre";
+import Games from "../components/Games";
 
 
 const Home = () => {
   return (
     <div>
-      <Genre />
+      <div>
+        <Genre />
+      </div>
+      <div>
+        <Games />
+      </div>
     </div>
   );
 };
