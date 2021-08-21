@@ -1,11 +1,18 @@
 const { Schema, model } = require('mongoose');
 
 const GameSchema = new Schema ({
-    gameName: {
+    name: {
         type: String
     },
-    genera: {
+    description: {
         type: String
+    },
+    image: {
+        type: String
+    },
+    genre: {
+        type: Schema.Types.ObjectId,
+        ref: 'Genre'
     },
     review: [
         {
