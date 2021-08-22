@@ -14,15 +14,23 @@ const typeDefs = gql`
     price: Float
     category: Genre
   }
+  input saveGameInput {
+    GameId: String
+    name: String
+    description: String
+    genre: String
+    image: String
+  }
   type User {
     _id: ID
-    firstName: String
-    lastName: String
+    username: String
     email: String
-    orders: [Order]
+    password: String
+    gameCount: Int
+    savedGames: [Game]
   }
   type Auth {
-    token: ID
+    token: ID!
     user: User
   }
   type Order {
@@ -31,10 +39,11 @@ const typeDefs = gql`
     games: [Game]
   }
   type Query {
+    me: User
     categories: [Genre]
     game(_id: ID!): Game
     games(genre: ID, name: String): [Game]
-    user: User
+    user(username: String!): User
     order(_id: ID!): Order
     checkout(games: [ID]!): Checkout
   }
@@ -43,6 +52,8 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     updateUser(userName: String, email: String, password: String): User
     addOrder(games: [ID]!): Order
+    saveGame(body: saveGameInput): User
+    removeGame(gameId: String!): User
   }
 `;
 
