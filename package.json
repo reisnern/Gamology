@@ -6,7 +6,6 @@
   "engines": {
     "node": ">=8"
   },
-  
   "scripts": {
     "main": "server/server.js",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -18,10 +17,13 @@
     "build": "cd client && npm run build"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
     "@google-cloud/local-auth": "^1.0.0",
+    "apollo-server-express": "^3.1.2",
     "bulma": "^0.9.3",
     "concurrently": "^6.2.1",
     "express": "^4.17.1",
+    "if-env": "^1.0.4",
     "mongoose": "^5.13.6",
     "nconf": "^0.11.0",
     "nodemon": "^2.0.12",
