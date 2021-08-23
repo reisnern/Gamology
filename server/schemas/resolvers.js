@@ -28,6 +28,15 @@ const resolvers = {
 
             return await Game.find(params).populate('genre');
         },
+        me: async (parent, args, context) => {
+            if (context.user) {
+              const userData = await User.findOne({ _id: context.user._id }).select(
+                "-__v -password"
+              );
+              return userData;
+            }
+            throw new AuthenticationError("Not logged in");
+        },
         user: async (parent, args, context) => {
             if (context.user) {
                 const user = await User.findById(context.user._id).populate({
@@ -104,14 +113,13 @@ const resolvers = {
                 throw new AuthenticationError('WROOOONG, try again!');
             }
       
-            const correctPassword = await user.isCorrectPassword(password);
+            const correctPw = await user.isCorrectPassword(password);
       
-            if (!correctPassword) {
+            if (!correctPw) {
                 throw new AuthenticationError('WROOOONG, try again!');
             }
       
             const token = signToken(user);
-      
             return { token, user };
         },
         updateUser: async (parent, args, context) => {

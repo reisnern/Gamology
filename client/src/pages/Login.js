@@ -45,7 +45,7 @@ function Login(props) {
                     <input id="password" name="password" type="password" onChange={change}/>
                 </div>
 
-                <button type="submit">Submit</button>
+                <button onClick={Login} type="submit">Submit</button>
             </form>
 
             <Link to="/signup">Actually Lets Sign Up Instead</Link>
