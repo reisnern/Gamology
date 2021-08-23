@@ -6,27 +6,28 @@ import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
 
 function Signup(props) {
-    const [formState, setFormState] = useState({ email: '', password: '' });
-    const [addUser] = useMutation(ADD_USER);
-    const submitForm = async event => {
+    const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+    const [addUser, { error }] = useMutation(ADD_USER);
+
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         const mutationResponse = await addUser({
             variables: {
-                userName: formState.userName,
-                email: formState.email,
-                password: formState.password
+                username: userFormData.username,
+                email: userFormData.email,
+                password: userFormData.password
         }
         });
         const token = mutationResponse.data.addUser.token;
 
         Auth.login(token);
     };
-    const change = event => {
+    const change = (event) => {
         const { name, value } = event.target;
 
-        setFormState({
-            ...formState,
+        setUserFormData({
+            ...userFormData,
             [name]: value
         });
     };
@@ -35,7 +36,7 @@ function Signup(props) {
         <div>
             <h2>Sign Up</h2>
 
-            <form onSubmit={submitForm}>
+            <form onSubmit={handleFormSubmit}>
                 <div>
                     <label htmlFor="username">Username:</label>
                     <input id="username" name="username" type="username" onChange={change}/>
@@ -51,7 +52,7 @@ function Signup(props) {
                     <input id="password" name="password" type="password" onChange={change}/>
                 </div>
                 
-                <button onClick={Signup} type="submit">Submit</button>
+                <button type="submit">Submit</button>
             </form>
 
             <Link to="/login">Actually Lets Login Instead</Link>

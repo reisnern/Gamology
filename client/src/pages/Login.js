@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 import { useMutation } from '@apollo/react-hooks';
 
 import Auth from "../utils/auth";
-import { LOGIN } from "../utils/mutations";
+import { LOGIN_USER } from "../utils/mutations";
 
 function Login(props) {
-    const [formState, setFormState] = useState({ email: '', password: '' })
-    const [login, { error }] = useMutation(LOGIN);
+    const [userFormData, setUserFormData] = useState({ email: '', password: '' })
+    const [login, { error }] = useMutation(LOGIN_USER);
   
-    const submitForm = async event => {
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
 
         try {
-            const mutationResponse = await login({ variables: { email: formState.email, password: formState.password } })
+            const mutationResponse = await login({ variables: { email: userFormData.email, password: userFormData.password } })
             const token = mutationResponse.data.login.token;
 
             Auth.login(token);
@@ -22,10 +22,10 @@ function Login(props) {
         }
     };
   
-    const change = event => {
+    const change = (event) => {
         const { name, value } = event.target;
-        setFormState({
-            ...formState,
+        setUserFormData({
+            ...userFormData,
             [name]: value
         });
     };
@@ -34,7 +34,7 @@ function Login(props) {
         <div>
             <h2>Login</h2>
 
-            <form onSubmit={submitForm}>
+            <form onSubmit={handleFormSubmit}>
                 <div>
                     <label htmlFor="email">Email:</label>
                     <input id="email" name="email" type="email" onChange={change}/>
@@ -45,7 +45,7 @@ function Login(props) {
                     <input id="password" name="password" type="password" onChange={change}/>
                 </div>
 
-                <button onClick={Login} type="submit">Submit</button>
+                <button type="submit">Submit</button>
             </form>
 
             <Link to="/signup">Actually Lets Sign Up Instead</Link>

@@ -48,9 +48,9 @@ const typeDefs = gql`
     checkout(games: [ID]!): Checkout
   }
   type Mutation {
-    addUser(userName: String!, email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    updateUser(userName: String, email: String, password: String): User
+    updateUser(username: String, email: String, password: String): User
     addOrder(games: [ID]!): Order
     saveGame(body: saveGameInput): User
     removeGame(gameId: String!): User
