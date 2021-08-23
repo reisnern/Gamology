@@ -1,1 +1,8 @@
-# gamologyV2
+# Gamology
+
+## Description
+
+## Sign Up
+## Usage
+
+
