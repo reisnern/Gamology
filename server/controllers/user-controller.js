@@ -11,7 +11,7 @@ const userController = {
   //= ==================================READ===============================
   // get user by id
   getUserById ({ params }, res) {
-    User.findOne({ _id: params.id })
+    User.findOne({ id: params.id })
       .then(dbUserData => {
         if (!dbUserData) {
           res.status(404).json({ message: '404! There is no user with that id. At least Hal 9000 couldn\'t find one.' })
@@ -36,7 +36,7 @@ const userController = {
   // ==================================UPDATE================================
   // update user by id
   updateUser ({ params, body }, res) {
-    User.findOneAndUpdate({ _id: params.id }, body, { new: true })
+    User.findOneAndUpdate({ id: params.id }, body, { new: true })
       .then(dbUserData => {
         if (!dbUserData) {
           res.status(404).json({ message: '404! We cant update it is we cant find it.' })
@@ -49,7 +49,7 @@ const userController = {
   //= ===================================DELETE=================================
   // delete user
   deleteUser ({ params }, res) {
-    User.findOneAndDelete({ _id: params.id })
+    User.findOneAndDelete({ id: params.id })
       .then(dbUserData => {
         if (!dbUserData) {
           res.status(404).json({ message: "404! Looks like the user you're trying to delete doesn't exist." })

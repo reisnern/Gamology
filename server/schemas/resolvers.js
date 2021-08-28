@@ -10,8 +10,8 @@ const resolvers = {
     genre: async () => {
       return await Genre.find()
     },
-    game: async (parent, { _id }) => {
-      return await Game.findById(_id).populate('genre')
+    game: async (parent, { id }) => {
+      return await Game.findById(id).populate('genre')
     },
     games: async (parent, { genre, name }) => {
       const params = {}
@@ -30,7 +30,7 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        const userData = await User.findOne({ _id: context.user._id }).select(
+        const userData = await User.findOne({ id: context.user.id }).select(
           '-__v -password'
         )
         return userData
@@ -39,7 +39,7 @@ const resolvers = {
     },
     user: async (parent, args, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
+        const user = await User.findById(context.user.id).populate({
           path: 'orders.games',
           populate: 'genre'
         })
@@ -51,14 +51,14 @@ const resolvers = {
 
       throw new AuthenticationError('HANG ON PARTNER, this aint the wild west you have to login first')
     },
-    order: async (parent, { _id }, context) => {
+    order: async (parent, { id }, context) => {
       if (context.user) {
-        const user = await User.findById(context.user._id).populate({
+        const user = await User.findById(context.user.id).populate({
           path: 'orders.games',
           populate: 'genre'
         })
 
-        return user.orders.id(_id)
+        return user.orders.id(id)
       }
 
       throw new AuthenticationError('HANG ON PARTNER, this aint the wild west you have to login first')
@@ -124,7 +124,7 @@ const resolvers = {
     },
     updateUser: async (parent, args, context) => {
       if (context.user) {
-        return await User.findByIdAndUpdate(context.user._id, args, { new: true })
+        return await User.findByIdAndUpdate(context.user.id, args, { new: true })
       }
 
       throw new AuthenticationError('HANG ON PARTNER, this aint the wild west you have to login first')
@@ -135,7 +135,7 @@ const resolvers = {
       if (context.user) {
         const order = new Order({ games })
 
-        await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } })
+        await User.findByIdAndUpdate(context.user.id, { $push: { orders: order } })
 
         return order
       }

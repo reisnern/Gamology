@@ -42,7 +42,7 @@ function Games () {
     if (!currentGenre) {
       return state.games
     }
-    return state.games.filter(game => game.genre._id === currentGenre)
+    return state.games.filter(game => game.genre.id === currentGenre)
   }
 
   return (
@@ -52,8 +52,8 @@ function Games () {
           <div>
               {filterGames().map(game => (
                   <Game
-                    key= {game._id}
-                    _id={game._id}
+                    key= {game.id}
+                    id={game.id}
                     image={game.image}
                     name={game.name}
                     price={game.price}

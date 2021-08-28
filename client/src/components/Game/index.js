@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Game (item) {
   const {
-    _id,
+    id,
     image,
     name,
     price,
@@ -12,7 +12,7 @@ function Game (item) {
 
   return (
       <div>
-        <Link to={`/products/${_id}`}>
+        <Link to={`/products/${id}`}>
           <img alt={name} src={`/images/${image}`}/>
           <p>{name}</p>
         </Link>
@@ -22,10 +22,10 @@ function Game (item) {
 
                 </li>
                 <li>
-                    <Link to={`/products/${_id}`}>{genre}</Link>
+                    <Link to={`/products/${id}`}>{genre}</Link>
                 </li>
                 <li>
-                    <Link to={`/products/${_id}`}>${price}</Link>
+                    <Link to={`/products/${id}`}>${price}</Link>
                 </li>
             </ul>
         </div>

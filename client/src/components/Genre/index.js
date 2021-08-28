@@ -47,9 +47,9 @@ function Genre () {
       <h2>Genres</h2>
       {genre.map(item => (
         <button
-          key={item._id}
+          key={item.id}
           onClick={() => {
-            handleClick(item._id)
+            handleClick(item.id)
           }}
         >
           {item.name}

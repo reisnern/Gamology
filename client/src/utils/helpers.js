@@ -13,8 +13,8 @@ export function idbPromise (storeName, method, object) {
     request.onupgradeneeded = function (event) {
       const db = request.result
 
-      db.createObjectStore('games', { keyPath: '_id' })
-      db.createObjectStore('genre', { keyPath: '_id' })
+      db.createObjectStore('games', { keyPath: 'id' })
+      db.createObjectStore('genre', { keyPath: 'id' })
     }
 
     request.onerror = function (event) {
@@ -47,7 +47,7 @@ export function idbPromise (storeName, method, object) {
           break
 
         case 'delete':
-          store.delete(object._id)
+          store.delete(object.id)
           break
 
         default:

@@ -3,13 +3,13 @@ import gql from 'graphql-tag'
 export const QUERY_GAMES = gql`
   query getGames($genre: ID) {
     games(genre: $genre) {
-      _id
+      id
       name
       description
       price
       image
       genre {
-        _id
+        id
       }
     }
   }
@@ -18,7 +18,7 @@ export const QUERY_GAMES = gql`
 export const QUERY_ALL_GENRE = gql`
   {
     games {
-      _id
+      id
       name
       description
       price
@@ -32,7 +32,7 @@ export const QUERY_ALL_GENRE = gql`
 export const QUERY_GENRE = gql`
 {
   genre {
-    _id
+    id
     name
   }
 }
@@ -41,7 +41,7 @@ export const QUERY_GENRE = gql`
 export const GET_ME = gql`
   {
     me {
-      _id
+      id
       email
       username
       savedBooks {
