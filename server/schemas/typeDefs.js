@@ -2,11 +2,11 @@ const { gql } = require('apollo-server-express')
 
 const typeDefs = gql`
   type Genre {
-    _id: ID
+    id: ID
     name: String
   }
   type Game {
-    _id: ID
+    id: ID
     name: String
     description: String
     image: String
@@ -22,7 +22,7 @@ const typeDefs = gql`
     image: String
   }
   type User {
-    _id: ID
+    id: ID
     username: String
     email: String
     password: String
@@ -34,17 +34,21 @@ const typeDefs = gql`
     user: User
   }
   type Order {
-    _id: ID
+    id: ID
     purchaseDate: String
     games: [Game]
   }
+  type Checkout {
+    foo: String
+  }
   type Query {
     me: User
+    genre: [Genre]
     categories: [Genre]
-    game(_id: ID!): Game
+    game(id: ID!): Game
     games(genre: ID, name: String): [Game]
     user(username: String!): User
-    order(_id: ID!): Order
+    order(id: ID!): Order
     checkout(games: [ID]!): Checkout
   }
   type Mutation {
