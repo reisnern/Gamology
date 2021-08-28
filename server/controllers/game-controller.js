@@ -18,9 +18,9 @@ const gameController = {
         res.status(400).json(err)
       })
   },
-  // find game by genera
+  // find game by genre
   getGamesByGenera ({ body }, res) {
-    Game.find({ genera: body.genera })
+    Game.find({ genre: body.genre })
     // TODO: add a .sort(to sort games based on number of positive)
       .then(dbGameData => res.json(dbGameData))
       .catch(err => {

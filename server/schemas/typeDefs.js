@@ -12,7 +12,7 @@ const typeDefs = gql`
     image: String
     quantity: Int
     price: Float
-    category: Genre
+    genre: Genre
   }
   input saveGameInput {
     GameId: String

@@ -20,7 +20,7 @@ router
   .delete(deleteGame)
 
 router
-  .route(':/genera')
+  .route(':/genre')
   .get(getGamesByGenera)
-// TODO: need to determine how genera will be structured. do we want custom genera or pre-defined
+// TODO: need to determine how genre will be structured. do we want custom genre or pre-defined
 module.exports = router
