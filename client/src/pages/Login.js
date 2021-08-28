@@ -31,18 +31,18 @@ function Login (props) {
   }
 
   return (
-        <div>
-            <h2>Login</h2>
+        <div className="form-container">
+            <h2 className="form-header">Login</h2>
 
             <form onSubmit={handleFormSubmit}>
                 <div>
                     <label htmlFor="email">Email:</label>
-                    <input id="email" name="email" type="current-email" onChange={change}/>
+                    <input id="email" name="email" type="current-email" onBlur={change}/>
                 </div>
 
                 <div>
                     <label htmlFor="password">Password:</label>
-                    <input id="password" name="password" type="current-password" onChange={change}/>
+                    <input id="password" name="password" type="current-password" onBlur={change}/>
                 </div>
 
                 <button type="submit">Submit</button>

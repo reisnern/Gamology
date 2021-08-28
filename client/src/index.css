@@ -26,13 +26,39 @@ main {
     justify-content: center;
 }
 
+form {
+    margin: 10px;
+}
+
+
 form div input {
     display: flex;
     justify-content: flex-end;
 }
 
 form button {
-    display: flex;
-    justify-content: center;
+    align-self: center;
     margin-top: 5px;
+    
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--accent-color);
+}
+
+.form-container {
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--accent-color);
+    background: var(--primary-color);
+    margin-top: 10px;
+    color: var(--accent-color)
+}
+.form-container a {
+    margin-left: 5px;
+}
+
+.form-header {
+    text-align: center;
 }

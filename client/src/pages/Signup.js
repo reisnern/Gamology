@@ -33,28 +33,26 @@ function Signup (props) {
   }
 
   return (
-        <div>
-            <h2>Sign Up</h2>
-
+        <div className="form-container">
+            <h2 className="form-header">Sign Up</h2>
             <form onSubmit={handleFormSubmit}>
                 <div>
                     <label htmlFor="username">Username:</label>
-                    <input id="username" name="username" type="new-username" onChange={change}/>
+                    <input id="username" name="username" type="new-username" onBlur={change}/>
                 </div>
 
                 <div>
                     <label htmlFor="email">Email:</label>
-                    <input id="email" name="email" type="new-email" onChange={change}/>
+                    <input id="email" name="email" type="new-email" onBlur={change}/>
                 </div>
 
                 <div>
                     <label htmlFor="password">Password:</label>
-                    <input id="password" name="password" type="new-password" onChange={change}/>
+                    <input id="password" name="password" type="new-password" onBlur={change}/>
                 </div>
 
                 <button type="submit">Submit</button>
             </form>
-
             <Link to="/login">Actually Lets Login Instead</Link>
         </div>
   )
