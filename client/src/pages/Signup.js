@@ -39,17 +39,17 @@ function Signup (props) {
             <form onSubmit={handleFormSubmit}>
                 <div>
                     <label htmlFor="username">Username:</label>
-                    <input id="username" name="username" type="username" onChange={change}/>
+                    <input id="username" name="username" type="new-username" onChange={change}/>
                 </div>
 
                 <div>
                     <label htmlFor="email">Email:</label>
-                    <input id="email" name="email" type="email" onChange={change}/>
+                    <input id="email" name="email" type="new-email" onChange={change}/>
                 </div>
 
                 <div>
                     <label htmlFor="password">Password:</label>
-                    <input id="password" name="password" type="password" onChange={change}/>
+                    <input id="password" name="password" type="new-password" onChange={change}/>
                 </div>
 
                 <button type="submit">Submit</button>

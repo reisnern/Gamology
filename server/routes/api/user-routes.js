@@ -2,6 +2,8 @@ const router = require('express').Router()
 // const { response } = require('express')
 const mongoose = require('mongoose')
 const MyUser = mongoose.model('MyUser', { name: String, password: String })
+
+
 const {
   newUser,
   getUserById,

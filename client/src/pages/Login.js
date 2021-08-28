@@ -37,12 +37,12 @@ function Login (props) {
             <form onSubmit={handleFormSubmit}>
                 <div>
                     <label htmlFor="email">Email:</label>
-                    <input id="email" name="email" type="email" onChange={change}/>
+                    <input id="email" name="email" type="current-email" onChange={change}/>
                 </div>
 
                 <div>
                     <label htmlFor="password">Password:</label>
-                    <input id="password" name="password" type="password" onChange={change}/>
+                    <input id="password" name="password" type="current-password" onChange={change}/>
                 </div>
 
                 <button type="submit">Submit</button>

@@ -32,6 +32,7 @@ function App () {
         <div>
           <Provider store={store}>
           <Navbar />
+          <main>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
@@ -39,6 +40,7 @@ function App () {
             <Route exact path="/account" component={Account} />
             <Route exact path="/game" component={Game} />
           </Switch>
+          </main>
           </Provider>
         </div>
       </Router>
