@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-const { Schema } = mongoose;
+const { Schema } = mongoose
 
 const orderSchema = new Schema({
   purchaseDate: {
@@ -13,8 +13,8 @@ const orderSchema = new Schema({
       ref: 'Game'
     }
   ]
-});
+})
 
-const Order = mongoose.model('Order', orderSchema);
+const Order = mongoose.model('Order', orderSchema)
 
-module.exports = Order;
+module.exports = Order

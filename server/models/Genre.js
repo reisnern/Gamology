@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-const { Schema } = mongoose;
+const { Schema } = mongoose
 
 const genreSchema = new Schema({
   name: {
@@ -8,8 +8,8 @@ const genreSchema = new Schema({
     required: true,
     trim: true
   }
-});
+})
 
-const Genre = mongoose.model('Genre', genreSchema);
+const Genre = mongoose.model('Genre', genreSchema)
 
-module.exports = Genre;
+module.exports = Genre
