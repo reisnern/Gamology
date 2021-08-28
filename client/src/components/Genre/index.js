@@ -1,33 +1,30 @@
-import React, {useEffect} from "react";
-import { useQuery } from '@apollo/react-hooks';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useQuery } from '@apollo/react-hooks'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { idbPromise } from '../../utils/helpers';
-import { QUERY_GENRE } from "../../utils/queries";
-import { UPDATE_GENRE, UPDATE_CURRENT_GENRE } from '../../utils/actions';
+import { idbPromise } from '../../utils/helpers'
+import { QUERY_GENRE } from '../../utils/queries'
+import { UPDATE_GENRE, UPDATE_CURRENT_GENRE } from '../../utils/actions'
 
-function Genre() {
-
+function Genre () {
   const state = useSelector((state) => {
     return state
-  });
-  const dispatch = useDispatch();
+  })
+  const dispatch = useDispatch()
 
-  const { genre } = state;
-  const { loading, data: genreData } = useQuery(QUERY_GENRE);
-
+  const { genre } = state
+  const { loading, data: genreData } = useQuery(QUERY_GENRE)
 
   useEffect(() => {
-
-    if(genreData) {
+    if (genreData) {
       dispatch({
         type: UPDATE_GENRE,
         genre: genreData.genre
-      });
+      })
 
       genreData.genre.forEach(genre => {
         idbPromise('genre', 'put', genre)
-      }) 
+      })
     } else if (!loading) {
       idbPromise('genre', 'get').then(genre => {
         dispatch({
@@ -36,15 +33,14 @@ function Genre() {
         })
       })
     }
-  }, [genreData, loading, dispatch]);
-
+  }, [genreData, loading, dispatch])
 
   const handleClick = id => {
     dispatch({
       type: UPDATE_CURRENT_GENRE,
       currentGenre: id
-    });
-  };
+    })
+  }
 
   return (
     <div>
@@ -53,14 +49,14 @@ function Genre() {
         <button
           key={item._id}
           onClick={() => {
-            handleClick(item._id);
+            handleClick(item._id)
           }}
         >
           {item.name}
         </button>
       ))}
     </div>
-  );
+  )
 }
 
-export default Genre;
+export default Genre

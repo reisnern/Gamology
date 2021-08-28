@@ -1,17 +1,16 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Game (item) {
-    const {
-        _id,
-        image,
-        name,
-        price,
-        genre
-    } = item;
+  const {
+    _id,
+    image,
+    name,
+    price,
+    genre
+  } = item
 
-
-    return (
+  return (
       <div>
         <Link to={`/products/${_id}`}>
           <img alt={name} src={`/images/${image}`}/>
@@ -31,7 +30,7 @@ function Game (item) {
             </ul>
         </div>
       </div>
-    );
+  )
 }
-  
-export default Game;
+
+export default Game

@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from 'graphql-tag'
 
 export const QUERY_GAMES = gql`
   query getGames($genre: ID) {
@@ -13,7 +13,7 @@ export const QUERY_GAMES = gql`
       }
     }
   }
-`;
+`
 
 export const QUERY_ALL_GENRE = gql`
   {
@@ -27,7 +27,7 @@ export const QUERY_ALL_GENRE = gql`
       }
     }
   }
-`;
+`
 
 export const QUERY_GENRE = gql`
 {
@@ -36,7 +36,7 @@ export const QUERY_GENRE = gql`
     name
   }
 }
-`;
+`
 
 export const GET_ME = gql`
   {
@@ -54,4 +54,4 @@ export const GET_ME = gql`
       }
     }
   }
-`;
+`

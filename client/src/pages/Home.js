@@ -1,7 +1,6 @@
-import React from "react";
-import Genre from "../components/Genre";
-import Games from "../components/Games";
-
+import React from 'react'
+import Genre from '../components/Genre'
+import Games from '../components/Games'
 
 const Home = () => {
   return (
@@ -13,7 +12,7 @@ const Home = () => {
         <Games />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
