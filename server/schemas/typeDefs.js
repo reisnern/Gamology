@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require('apollo-server-express')
 
 const typeDefs = gql`
   type Genre {
@@ -55,6 +55,6 @@ const typeDefs = gql`
     saveGame(body: saveGameInput): User
     removeGame(gameId: String!): User
   }
-`;
+`
 
-module.exports = typeDefs;
+module.exports = typeDefs

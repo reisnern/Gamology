@@ -1,30 +1,30 @@
-const { Review } = require('../models');
+const { Review } = require('../models')
 
-//TODO: determine how reviews will be nested before continuing, games and users.
+// TODO: determine how reviews will be nested before continuing, games and users.
 
 const reviewController = {
-    // ==================================CREATE==================================
-    //add review
-    addReview({ body }, res) {
-        Review.create(body)
-        .then(dbReviewData => res.json(dbReviewData))
-        .catch(err => res.status(400).json(err));
-    },
-    //====================================READ==================================
-    //get all reviews
-    //TODO: find all reviews for a game? all reviews? needs revisment!
-    getReviews({ body }, res) {
-        Review.find({})
-        .then(dbReviewData => res.json(dbReviewData))
-        .catch(err => {
-            console.log(err);
-            res.status(400).json(err);
-        });
-    },
+  // ==================================CREATE==================================
+  // add review
+  addReview ({ body }, res) {
+    Review.create(body)
+      .then(dbReviewData => res.json(dbReviewData))
+      .catch(err => res.status(400).json(err))
+  },
+  //= ===================================READ==================================
+  // get all reviews
+  // TODO: find all reviews for a game? all reviews? needs revisment!
+  getReviews ({ body }, res) {
+    Review.find({})
+      .then(dbReviewData => res.json(dbReviewData))
+      .catch(err => {
+        console.log(err)
+        res.status(400).json(err)
+      })
+  }
 
-    //====================================UPDATE==================================
+  //= ===================================UPDATE==================================
 
-    //====================================DELETE==================================
+  //= ===================================DELETE==================================
 }
 
-module.exports = reviewController;
+module.exports = reviewController
