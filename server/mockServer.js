@@ -14,7 +14,8 @@ async function startApolloServer () {
 
   const server = new ApolloServer({
     resolvers,
-    typeDefs
+    typeDefs,
+    mocks: true
     // context: authMiddleware
   })
 
