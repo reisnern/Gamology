@@ -30,7 +30,7 @@ const gameController = {
   },
   // find game by id
   getGameById ({ params }, res) {
-    Game.findOne({ _id: params.id })
+    Game.findOne({ id: params.id })
       .then(dbGameData => res.json(dbGameData))
       .catch(err => {
         console.log(err)
@@ -40,7 +40,7 @@ const gameController = {
   //= ==================================UPDATE=======================================
   // update game info
   updateGame ({ params, body }, res) {
-    Game.findOneAndUpdate({ _id: params.id }, body, { new: true })
+    Game.findOneAndUpdate({ id: params.id }, body, { new: true })
       .then(dbGameData => {
         if (!dbGameData) {
           res.status(404).json({ message: '404! What ever it is you\'re looking for it isn\'t here.' })
@@ -53,7 +53,7 @@ const gameController = {
   // ====================================DELETE====================================
   // remove a game from the db
   deleteGame ({ params }, res) {
-    Game.findOneAndDelete({ _id: params.id })
+    Game.findOneAndDelete({ id: params.id })
       .then(dbGameData => {
         if (!dbGameData) {
           res.status(404).json({ message: '404! Nice try administrator but in the words of gandalf the grey "YOU HAVE NO POWER HERE!"' })

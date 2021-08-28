@@ -1,19 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Game (item) {
-    const {
-        _id,
-        image,
-        name,
-        price,
-        genre
-    } = item;
+  const {
+    id,
+    image,
+    name,
+    price,
+    genre
+  } = item
 
-
-    return (
+  return (
       <div>
-        <Link to={`/products/${_id}`}>
+        <Link to={`/products/${id}`}>
           <img alt={name} src={`/images/${image}`}/>
           <p>{name}</p>
         </Link>
@@ -23,15 +22,15 @@ function Game (item) {
 
                 </li>
                 <li>
-                    <Link to={`/products/${_id}`}>{genre}</Link>
+                    <Link to={`/products/${id}`}>{genre}</Link>
                 </li>
                 <li>
-                    <Link to={`/products/${_id}`}>${price}</Link>
+                    <Link to={`/products/${id}`}>${price}</Link>
                 </li>
             </ul>
         </div>
       </div>
-    );
+  )
 }
-  
-export default Game;
+
+export default Game

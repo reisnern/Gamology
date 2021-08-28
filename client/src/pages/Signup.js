@@ -1,38 +1,38 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useMutation } from '@apollo/react-hooks';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { useMutation } from '@apollo/react-hooks'
 
-import Auth from "../utils/auth";
-import { ADD_USER } from "../utils/mutations";
+import Auth from '../utils/auth'
+import { ADD_USER } from '../utils/mutations'
 
-function Signup(props) {
-    const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
-    const [addUser, { error }] = useMutation(ADD_USER);
+function Signup (props) {
+  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' })
+  const [addUser, { error }] = useMutation(ADD_USER)
+  console.log(error)
+  const handleFormSubmit = async (event) => {
+    event.preventDefault()
 
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
+    const mutationResponse = await addUser({
+      variables: {
+        username: userFormData.username,
+        email: userFormData.email,
+        password: userFormData.password
+      }
+    })
+    const token = mutationResponse.data.addUser.token
 
-        const mutationResponse = await addUser({
-            variables: {
-                username: userFormData.username,
-                email: userFormData.email,
-                password: userFormData.password
-        }
-        });
-        const token = mutationResponse.data.addUser.token;
+    Auth.login(token)
+  }
+  const change = (event) => {
+    const { name, value } = event.target
 
-        Auth.login(token);
-    };
-    const change = (event) => {
-        const { name, value } = event.target;
+    setUserFormData({
+      ...userFormData,
+      [name]: value
+    })
+  }
 
-        setUserFormData({
-            ...userFormData,
-            [name]: value
-        });
-    };
-  
-    return (
+  return (
         <div>
             <h2>Sign Up</h2>
 
@@ -51,13 +51,13 @@ function Signup(props) {
                     <label htmlFor="password">Password:</label>
                     <input id="password" name="password" type="password" onChange={change}/>
                 </div>
-                
+
                 <button type="submit">Submit</button>
             </form>
 
             <Link to="/login">Actually Lets Login Instead</Link>
         </div>
-    );
+  )
 }
-  
-export default Signup;
+
+export default Signup

@@ -1,17 +1,17 @@
-import React from "react";
-import { Provider } from 'react-redux';
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from '@apollo/react-hooks';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import store from './utils/store';
+import React from 'react'
+import { Provider } from 'react-redux'
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from '@apollo/react-hooks'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import store from './utils/store'
 
-import './App.css';
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import Account from "./pages/Account";
-import Game from "./pages/Game";
-import Navbar from "./components/Navbar";
+import './App.css'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import Account from './pages/Account'
+import Game from './pages/Game'
+import Navbar from './components/Navbar'
 
 const client = new ApolloClient({
   request: (operation) => {
@@ -22,10 +22,10 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: '/graphql',
+  uri: 'http://localhost:3001/graphql'
 })
 
-function App() {
+function App () {
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -43,7 +43,7 @@ function App() {
         </div>
       </Router>
     </ApolloProvider>
-  );
+  )
 }
 
-export default App;
+export default App

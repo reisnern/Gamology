@@ -1,14 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import './Navbar.css';
-import Auth from "../../utils/auth";
-import logo from "../../assets/logo.png";
+import './Navbar.css'
+import Auth from '../../utils/auth'
+import logo from '../../assets/logo.png'
 
 function Navbar () {
-    function showNavigation() {
-      if (Auth.loggedIn()) {
-        return (
+  function showNavigation () {
+    if (Auth.loggedIn()) {
+      return (
           <ul>
             <li>
               <Link to="/account">Account</Link>
@@ -17,9 +17,9 @@ function Navbar () {
               <a href="/" onClick={() => Auth.logout()}>Logout</a>
             </li>
           </ul>
-        );
-      } else {
-        return (
+      )
+    } else {
+      return (
           <ul>
             <li>
               <Link to="/login">Login</Link>
@@ -28,10 +28,10 @@ function Navbar () {
               <Link to="/signup">Sign Up</Link>
             </li>
           </ul>
-        );
-      }
+      )
     }
-    return (
+  }
+  return (
       <header className="navbar">
         <div className="home">
           <img className="logo" src={logo} alt="Gamology" />
@@ -41,7 +41,7 @@ function Navbar () {
           {showNavigation()}
         </nav>
       </header>
-    );
+  )
 }
-  
-export default Navbar;
+
+export default Navbar
