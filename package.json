@@ -4,7 +4,7 @@
   "repository": "https://github.com/reisnern/Gamology",
   "license": "Apache-2.0",
   "engines": {
-    "node": ">=8"
+    "node": "14.x"
   },
   "scripts": {
     "main": "server/server.js",
