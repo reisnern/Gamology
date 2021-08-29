@@ -7,4 +7,5 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/gamology', {
   useFindAndModify: false
 })
 
+
 module.exports = mongoose.connection

@@ -13,8 +13,8 @@ export function idbPromise (storeName, method, object) {
     request.onupgradeneeded = function (event) {
       const db = request.result
 
-      db.createObjectStore('games', { keyPath: 'id' })
-      db.createObjectStore('genre', { keyPath: 'id' })
+      db.createObjectStore('games', { autoIncrement: true })
+      db.createObjectStore('genre', { autoIncrement: true })
     }
 
     request.onerror = function (event) {
