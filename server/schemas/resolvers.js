@@ -102,6 +102,8 @@ const resolvers = {
   Mutation: {
     addUser: async (parent, args) => {
       const user = await User.create(args)
+      user.id = user._id // mapp to model
+      console.log('USER:', user)
       const token = signToken(user)
 
       return { token, user }
