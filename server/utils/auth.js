@@ -4,11 +4,7 @@ const expiration = '2h'
 
 module.exports = {
   authMiddleware: function ({ req }) {
-    let token = req.body.token || req.query.token || req.headers.authorization
-
-    if (req.headers.authorization) {
-      token = token.split(' ').pop().trim()
-    }
+    const token = req.body.token || req.query.token || req.headers.authorization
 
     console.log('Token: ', token)
 
@@ -17,7 +13,7 @@ module.exports = {
     }
 
     try {
-      const { data } = jwt.verify(token, secret, { maxAge: expiration })
+      const { data } = jwt.verify(token, secret, { algorithm: 'HS256', maxAge: expiration })
 
       req.user = data
     } catch {
@@ -32,7 +28,7 @@ module.exports = {
     return jwt.sign(
       { data: payload },
       secret,
-      { expiresIn: expiration }
+      { algorithm: 'HS256', expiresIn: expiration }
     )
   }
 }
