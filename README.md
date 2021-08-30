@@ -9,6 +9,8 @@ This is application was made to help gamers build their gaming library. It was m
 
 Many gamers have more than one console/gaming system. Using Gamology they can create and account to find and save games from multiple consoles into one place.
 
+![Screen Shot 2021-08-30 at 11 28 52 AM](https://user-images.githubusercontent.com/79028196/131379986-144e48ca-6030-4c04-bac6-847ef5a8f80c.png)
+
 ## Table of Contents
 
 * [Installation](#installation)
