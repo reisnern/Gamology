@@ -48,7 +48,7 @@ function Signup (props) {
 
                 <div>
                     <label htmlFor="password">Password:</label>
-                    <input id="password" name="password" type="new-password" onBlur={change}/>
+                    <input id="password" name="password" type="password new-password" onBlur={change}/>
                 </div>
 
                 <button type="submit">Submit</button>

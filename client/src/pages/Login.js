@@ -42,7 +42,7 @@ function Login (props) {
 
                 <div>
                     <label htmlFor="password">Password:</label>
-                    <input id="password" name="password" type="current-password" onBlur={change}/>
+                    <input id="password" name="password" type="password" onBlur={change}/>
                 </div>
 
                 <button type="submit">Submit</button>
