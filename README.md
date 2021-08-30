@@ -28,6 +28,8 @@ Once everything has been installed navigate to the client folder and run the fol
 2. Starting the server
 `npm start`
 
+There may also be an error install ing bcrypt. stating that one of its dependancies "node-pre-gyp" cannot be located. ensure that you run a global install of this dependancy. "npm install -g node-pre-gyp".
+
 ## Tech
 
 * [Node](https://nodejs.org/en/)
