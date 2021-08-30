@@ -22,7 +22,7 @@ const client = new ApolloClient({
       }
     })
   },
-  uri: 'https://gentle-falls-79938.herokuapp.com//graphql'
+  uri: 'https://gentle-falls-79938.herokuapp.com/graphql'
 })
 
 function App () {
